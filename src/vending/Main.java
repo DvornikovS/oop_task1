@@ -1,8 +1,8 @@
-package ru.gb.vending;
+package vending;
 
-import ru.gb.vending.product.Bottle;
-import ru.gb.vending.product.Product;
-import ru.gb.vending.vending.VendingMachine;
+import vending.product.Bottle;
+import vending.product.Product;
+import vending.vending.VendingMachine;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.

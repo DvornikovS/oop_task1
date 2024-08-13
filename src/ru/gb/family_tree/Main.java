@@ -11,22 +11,27 @@ import  java.time.LocalDate;
 public class Main {
 
     public static void main(String[] args){
-        FamilyTree tree = testTree();
-        tree = readTree();
+        FamilyTree<Human> tree = testTree();
+        //tree = readTree();
         //saveTree(tree);
         System.out.println(tree);
+        tree.sortByBirthDate();
+        System.out.println(tree);
+        tree.sortByName();
+        System.out.println(tree);
+
     }
-    private static FamilyTree readTree(){
+    private static FamilyTree<Human> readTree(){
         FileHandler fileHandler = new FileHandler();
-        return (FamilyTree) fileHandler.read();
+        return (FamilyTree<Human>) fileHandler.read();
     }
-    private static void  saveTree(FamilyTree tree){
+    private static void  saveTree(FamilyTree<Human> tree){
         FileHandler fileHandler = new FileHandler();
         fileHandler.save(tree);
     }
 
-    public static FamilyTree testTree() {
-        FamilyTree tree = new FamilyTree();
+    public static FamilyTree<Human> testTree() {
+        FamilyTree<Human> tree = new FamilyTree<>();
 
         Human human1 = new Human("Андрей", Gender.Male, LocalDate.parse("1953-04-13"));
         Human human2 = new Human("Екатерина", Gender.Female, LocalDate.parse("1954-06-16"));
